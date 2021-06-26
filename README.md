@@ -2,13 +2,11 @@
 
 A place to collaborate and share code and related files with the team.
 
-### Structure
+## Structure
 
-#### docker_files
+### docker_files
 
 This directory is used to write our tests. When running our experiments in docker, it will copy this directory to our container
-
-Files:
 
 `run_all_tests.sh` - Automation to run all our tests sequentially
 
@@ -30,7 +28,9 @@ Files:
 
 `mock_error_<number>/<provider>/main_solve.tf` - sym linked file, edit the `mock_error_<number>/main_solve.tf` instead
 
-#### research_paper_files
+### research_paper_files
+
+This directory is used to hold our research paper
 
 `final_doc.tex` - Our current latex file
 
