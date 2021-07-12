@@ -1,10 +1,7 @@
-export AWS_ACCESS_KEY_ID="<access_key_id from aws administrator>"
-export AWS_SECRET_ACCESS_KEY="<secret_access_key from aws administrator>"
-
-for mock in 1 2 3 4 5
+for testcase in test_*
 do
-    echo "################ Tests for mock error $number"
-    cd "mock_error_$number"
+    printf "################ Executing test %s" $testcase
+    cd $testcase
     chmod +x ./run_tests.sh
     ./run_tests.sh
     cd ..
