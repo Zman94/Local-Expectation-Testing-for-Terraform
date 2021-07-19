@@ -1,3 +1,7 @@
+if [ -f execstats.txt ]; then
+  logs/all_testcases_exectime_stats.log
+fi
+
 for testcase in test_*
 do
     printf "################ Executing test %s" $testcase

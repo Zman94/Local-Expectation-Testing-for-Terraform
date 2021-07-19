@@ -16,6 +16,13 @@ unstash_credentials() {
 	fi
 }
 
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+if [ "${SCRIPTPATH}" == "." ]; then
+  SCRIPTPATH=`pwd`
+fi
+testcase_name=`echo ${SCRIPTPATH} | rev | cut -d / -f 1 | rev`
+
 outcomes="error fixed"
 for outcome in ${outcomes}; do
 	printf "\t################ Testing for '%s' outcome\n" $outcome
@@ -26,15 +33,21 @@ for outcome in ${outcomes}; do
 			printf '\t\t------Provider is not AWS, stashing AWS credentials\n'
 			stash_credentials
 		fi
+
 		cd $provider
 		terraform init
 		printf '\t\t\t----Recording apply time\n'
-		time terraform apply -auto-approve
+		log_dir="${SCRIPTPATH}/../logs"
+		this_test_execution_time_stats_log="${log_dir}/${testcase_name}_${outcome}_${provider}_exectime_stats.log"
+    all_execution_time_stats_log="${log_dir}/all_testcases_exectime_stats.log"
+	  { time terraform apply -auto-approve ; } 2>> ${this_test_execution_time_stats_log}
+    exec_time=`cat ${this_test_execution_time_stats_log} | grep real`
+		echo "${testcase_name}:${outcome}:${provider}:${exec_time} " >> ${all_execution_time_stats_log}
 		printf '\t\t\t----Recording destroy time\n'
 		time terraform destroy -auto-approve
 		if [ "$provider" != "aws" ]; then
 			unstash_credentials
-                fi
+    fi
 		cd ../
 	done
 	cd ../
