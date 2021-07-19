@@ -3,7 +3,8 @@
 resource "aws_instance" "myweb" {
   instance_type = "t2.micro"
   tags = {
-    Name    = "test3"
-    Project = "HyperScale"
+    Name     = "test3"
+    Project  = "HyperScale"
+    TestType = "Error"
   }
 }

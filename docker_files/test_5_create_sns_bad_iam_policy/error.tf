@@ -13,8 +13,9 @@ resource "aws_cloudwatch_event_rule" "console" {
 EOF
 
   tags = {
-    Name    = "test5"
-    Project = "HyperScale"
+    Name     = "test5"
+    Project  = "HyperScale"
+    TestType = "Error"
   }
 }
 
@@ -27,8 +28,9 @@ resource "aws_cloudwatch_event_target" "sns" {
 resource "aws_sns_topic" "aws_logins" {
   name = "aws-console-logins"
   tags = {
-    Name    = "test5"
-    Project = "HyperScale"
+    Name     = "test5"
+    Project  = "HyperScale"
+    TestType = "Error"
   }
 }
 

@@ -23,7 +23,8 @@ resource "aws_sns_topic" "user_updates" {
 EOF
 
   tags = {
-    Name    = "test6"
-    Project = "HyperScale"
+    Name     = "test6"
+    Project  = "HyperScale"
+    TestType = "Error"
   }
 }

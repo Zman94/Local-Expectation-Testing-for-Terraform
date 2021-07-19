@@ -9,8 +9,9 @@ resource "aws_dynamodb_table" "test_dynamo" {
     type = "S"
   }
   tags = {
-    Name    = "test9"
-    Project = "HyperScale"
+    Name     = "test9"
+    Project  = "HyperScale"
+    TestType = "Error"
   }
 }
 
