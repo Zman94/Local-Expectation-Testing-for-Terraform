@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "b" {
   acl    = "privatex"
 
   tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
+    Name    = "test7"
+    Project = "HyperScale"
   }
 }

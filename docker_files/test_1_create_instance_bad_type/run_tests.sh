@@ -27,8 +27,9 @@ for outcome in error; do
 		fi
 		cd $provider
 		terraform init
+                OUTFILE = "$outcome_$provider_TIME.TXT"
 		printf '\t\t\t----Recording apply time\n'
-		time terraform apply -auto-approve
+		time terraform apply -auto-approve > ${OUTFILE}
 		printf '\t\t\t----Recording destroy time\n'
 		time terraform destroy -auto-approve
 		if [ "$provider" != "aws" ]; then

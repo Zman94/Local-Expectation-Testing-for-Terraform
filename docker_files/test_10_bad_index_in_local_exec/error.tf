@@ -3,9 +3,9 @@ resource "aws_vpc" "test_8_vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "test_8"
+    Name    = "test10"
+    Project = "HyperScale"
   }
-
 }
 
 resource "null_resource" "possible_error" {
