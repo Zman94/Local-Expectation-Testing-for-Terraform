@@ -16,7 +16,8 @@ unstash_credentials() {
 	fi
 }
 
-for outcome in error; do
+outcomes="error fixed"
+for outcome in ${outcomes}; do
 	printf "\t################ Testing for '%s' outcome\n" $outcome
 	cd $outcome
 	for provider in $(ls -d */ | sed -e 's-/$--'); do
@@ -27,9 +28,8 @@ for outcome in error; do
 		fi
 		cd $provider
 		terraform init
-                OUTFILE = "$outcome_$provider_TIME.TXT"
 		printf '\t\t\t----Recording apply time\n'
-		time terraform apply -auto-approve > ${OUTFILE}
+		time terraform apply -auto-approve
 		printf '\t\t\t----Recording destroy time\n'
 		time terraform destroy -auto-approve
 		if [ "$provider" != "aws" ]; then

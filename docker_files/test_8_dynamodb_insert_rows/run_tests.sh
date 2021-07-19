@@ -16,7 +16,8 @@ unstash_credentials() {
 	fi
 }
 
-for outcome in error fixed; do
+outcomes="error fixed"
+for outcome in ${outcomes}; do
 	printf "\t################ Testing for '%s' outcome\n" $outcome
 	cd $outcome
 	for provider in $(ls -d */ | sed -e 's-/$--'); do
