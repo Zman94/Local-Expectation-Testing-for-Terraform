@@ -5,8 +5,9 @@ resource "aws_s3_bucket" "b" {
   acl    = "privatex"
 
   tags = {
-    Name     = "test7"
-    Project  = "HyperScale"
-    TestType = "Error"
+    Name      = "test7"
+    Project   = "HyperScale"
+    TestType  = "Error"
+    TimeStamp = "2021JUL23T1930"
   }
 }

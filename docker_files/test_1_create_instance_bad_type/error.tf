@@ -4,8 +4,9 @@ resource "aws_instance" "myweb" {
   ami           = "ami-0dc2d3e4c0f9ebd18"
   instance_type = "t2.superhuge"
   tags = {
-    Name     = "test1"
-    Project  = "HyperScale"
-    TestType = "Error"
+    Name      = "test1"
+    Project   = "HyperScale"
+    TestType  = "Error"
+    TimeStamp = "2021JUL23T1930"
   }
 }

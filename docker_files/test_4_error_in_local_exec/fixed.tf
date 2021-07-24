@@ -9,8 +9,9 @@ resource "aws_instance" "web" {
   }
 
   tags = {
-    Name     = "test4"
-    Project  = "HyperScale"
-    TestType = "Fixed"
+    Name      = "test4"
+    Project   = "HyperScale"
+    TestType  = "Fixed"
+    TimeStamp = "2021JUL23T1930"
   }
 }

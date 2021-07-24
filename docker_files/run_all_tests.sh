@@ -1,6 +1,4 @@
-if [ -f execstats.txt ]; then
-  logs/all_testcases_exectime_stats.log
-fi
+rm -f logs/*.log
 
 for testcase in test_*
 do

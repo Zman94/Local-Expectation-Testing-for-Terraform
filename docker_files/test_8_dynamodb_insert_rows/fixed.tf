@@ -9,9 +9,10 @@ resource "aws_dynamodb_table" "test_dynamo" {
     type = "S"
   }
   tags = {
-    Name     = "test8"
-    Project  = "HyperScale"
-    TestType = "Fixed"
+    Name      = "test8"
+    Project   = "HyperScale"
+    TestType  = "Fixed"
+    TimeStamp = "2021JUL23T1930"
   }
 }
 

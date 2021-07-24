@@ -3,9 +3,10 @@ resource "aws_vpc" "test_8_vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name     = "test10"
-    Project  = "HyperScale"
-    TestType = "Fixed"
+    Name      = "test10"
+    Project   = "HyperScale"
+    TestType  = "Fixed"
+    TimeStamp = "2021JUL23T1930"
   }
 }
 

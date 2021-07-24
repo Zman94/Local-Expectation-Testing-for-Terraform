@@ -16,11 +16,7 @@ unstash_credentials() {
 	fi
 }
 
-SCRIPT=$(readlink -f "$0")
-SCRIPTPATH=$(dirname "$SCRIPT")
-if [ "${SCRIPTPATH}" == "." ]; then
-  SCRIPTPATH=`pwd`
-fi
+SCRIPTPATH=`pwd`
 testcase_name=`echo ${SCRIPTPATH} | rev | cut -d / -f 1 | rev`
 
 outcomes="error fixed"
