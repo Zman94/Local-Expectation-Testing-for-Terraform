@@ -18,22 +18,12 @@ This directory is used to write our tests. When running our experiments in docke
 
 `mock_error_<number>/run_tests.sh` - Automation to run a specific error's tests
 
-`mock_error_<number>/main_error.tf` - The error we are testing. Sym linked to all providers for our automation
+`mock_error_<number>/error.tf` - The error we are testing. Sym linked to all providers for our automation
 
-`mock_error_<number>/main_solve.tf` - The error we are testing, but fixed. Sym linked to all providers for our automation
+`mock_error_<number>/fixed.tf` - The error we are testing, but fixed. Sym linked to all providers for our automation
 
-`mock_error_<number>/<provider>` - Our three providers we're testing on
+`mock_error_<number>/<error, fixed>/<provider>` - Our three providers we're testing on
 
-`mock_error_<number>/<provider>/main_error.tf` - sym linked file, edit the `mock_error_<number>/main_error.tf` instead
+`mock_error_<number>/<error, fixed>/provider>/error.tf` - sym linked file, edit the `mock_error_<number>/error.tf` instead
 
-`mock_error_<number>/<provider>/main_solve.tf` - sym linked file, edit the `mock_error_<number>/main_solve.tf` instead
-
-### research_paper_files
-
-This directory is used to hold our research paper
-
-`final_doc.tex` - Our current latex file
-
-`final_doc.pdf` - The current pdf of our latex file
-
-`img/` - Any images used in our latex file
+`mock_error_<number>/<error, fixed><provider>/fixed.tf` - sym linked file, edit the `mock_error_<number>/fixed.tf` instead
