@@ -36,9 +36,9 @@ This directory is used to write our tests. When running our experiments in docke
 
 [Moto](https://github.com/spulec/moto#stand-alone-server-mode): We recommend using the stand-alone server mode.
 
-[Localstack](https://github.com/localstack/localstack#installing): Also requires Docker
+[LocalStack](https://github.com/localstack/localstack#installing): Also requires Docker
 
-[Docker](https://www.docker.com/): Localstack runs within Docker
+[Docker](https://www.docker.com/): LocalStack runs within Docker
 
 [asdf](https://asdf-vm.com/): Optional if you have Terraform 0.15.5 installed already.
 
@@ -46,7 +46,7 @@ This directory is used to write our tests. When running our experiments in docke
 
 1. Start docker
 
-2. Start Localstack in one tab. `localsack start`
+2. Start LocalStack in one tab. `localsack start`
 
 3. Start Moto in a second tab. `moto_server -p13000`
 
