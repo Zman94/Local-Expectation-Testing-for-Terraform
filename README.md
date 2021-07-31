@@ -46,9 +46,9 @@ This directory is used to write our tests. When running our experiments in docke
 
 1. Start docker
 
-2. Start Moto in one tab. `localsack start`
+2. Start Localstack in one tab. `localsack start`
 
-3. Start Localstack in a second tab. `moto_server -p13000`
+3. Start Moto in a second tab. `moto_server -p13000`
 
 4. Run `run_all_tests.sh` and your logs will appear in `logs`.
 
